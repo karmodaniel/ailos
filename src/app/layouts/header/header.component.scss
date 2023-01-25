@@ -1,0 +1,59 @@
+.mat-toolbar {
+  width: 100%;
+  padding: 0;
+  height: 6rem;
+
+  .toolbar-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 2rem;
+
+    .toolbar-content-left {
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #040f14;
+      }
+
+      span {
+        font-size: 0.75rem;
+        font-weight: 400;
+        color: #889499;
+      }
+    }
+
+    .toolbar-content-right {
+      width: 30%;
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      align-items: center;
+
+      .mat-icon {
+        color: #457d97;
+      }
+
+      .avatar {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: 1px solid #457d97;
+        background-image: url("/assets/images/avatar.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .mat-stroked-button {
+        border-radius: 1.2rem;
+        border: 1px solid #457d97;
+        padding: 0 1.5rem;
+        color: #457d97;
+        font-weight: 600;
+      }
+    }
+  }
+}
