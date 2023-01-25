@@ -1,0 +1,44 @@
+<section class="menu">
+  <div *ngIf="isExpanded" id="nav-img">
+    <img src="./assets/images/logo.png" alt="" srcset="" />
+  </div>
+
+  <div *ngIf="!isExpanded" id="nav-img-small">
+    <img src="./assets/images/small-logo.svg" alt="" srcset="" />
+  </div>
+
+  <div class="links">
+    <ul role="list">
+      <li (click)="isExpanded = !isExpanded" role="listitem" id="menu-icon">
+        <mat-icon class="icon"
+          >menu</mat-icon
+        >
+      </li>
+
+      <li role="listitem">
+        <mat-icon class="icon">search</mat-icon>
+        <input *ngIf="isExpanded" type="text" placeholder="Buscar item" />
+      </li>
+
+      <li role="listitem">
+        <mat-icon class="icon">star</mat-icon>
+        <span *ngIf="isExpanded">Favoritos</span>
+      </li>
+
+      <li role="listitem">
+        <mat-icon class="icon">sms</mat-icon>
+        <span *ngIf="isExpanded">Atendimento</span>
+      </li>
+
+      <li role="listitem">
+        <mat-icon class="icon">tune</mat-icon>
+        <span *ngIf="isExpanded">Cadastro</span>
+      </li>
+
+      <li role="listitem">
+        <mat-icon class="icon">account_balance</mat-icon>
+        <span *ngIf="isExpanded">Demais telas/ rotinas</span>
+      </li>
+    </ul>
+  </div>
+</section>

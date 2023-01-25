@@ -1,0 +1,51 @@
+.menu {
+  height: 100%;
+  background-color: #007d8a;
+
+  #nav-img {
+    height: 100px;
+    width: 80%;
+    margin-left: 1rem;
+
+    img {
+      height: 100px;
+      width: 100%;
+      object-fit: fill;
+    }
+  }
+
+  #nav-img-small {
+    height: 50px;
+    margin-bottom: 2.5rem;
+
+    img {
+      height: 100%;
+      width: 100%;
+      margin-top: 1rem;
+    }
+  }
+
+  .links {
+    ul li {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      width: 100%;
+      padding: 1.25rem 1.875rem;
+
+      .icon {
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      span {
+        color: #ffffff;
+      }
+    }
+
+    ul li:hover {
+      background-color: #165c7d;
+      cursor: pointer;
+    }
+  }
+}
