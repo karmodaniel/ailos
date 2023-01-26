@@ -2,3 +2,32 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.mat-stepper-horizontal, .mat-stepper-vertical {
+  background-color: transparent;
+}
+
+.mat-step-header {
+  .mat-step-icon:not(.mat-step-header .mat-step-icon-selected) {
+    background-color: #C6CED1;
+  }
+
+  .mat-step-icon-selected {
+    background-color: transparent;
+    border: 2px solid #165C7D;
+  }
+
+  .mat-step-label:not( .mat-step-label.mat-step-label-active.mat-step-label-selected ) {
+    color: #889499;
+  }
+
+  .mat-step-label.mat-step-label-active.mat-step-label-selected {
+    color: #165C7D;
+  }
+}

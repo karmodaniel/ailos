@@ -11,8 +11,6 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 import { MatBadgeIconDirective } from './directives/mat-badge-icon.directive';
 
-
-
 const modules = [
   MatSidenavModule,
   MatListModule,
@@ -26,9 +24,7 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [
-    MatBadgeIconDirective
-  ],
+  declarations: [MatBadgeIconDirective],
   imports: [CommonModule, ...modules],
   exports: [...modules, MatBadgeIconDirective],
   providers: [provideNgxMask()]
