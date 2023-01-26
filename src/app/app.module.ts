@@ -9,6 +9,7 @@ import { NavigationComponent } from './layouts/navigation/navigation.component';
 import { AdmissionCooperativeModule } from './pages/admission-cooperative/admission-cooperative.module';
 import { SharedModule } from './shared/shared.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     AdmissionCooperativeModule,
-    SharedModule
+    SharedModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
