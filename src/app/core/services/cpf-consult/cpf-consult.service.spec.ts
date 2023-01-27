@@ -4,10 +4,10 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
-import { User } from '../../../shared/models/user/user.class';
+import { User } from '@shared/models/user/user.class';
 import { CpfConsultService } from './cpf-consult.service';
 
-fdescribe('CpfConsultService', () => {
+describe('CpfConsultService', () => {
   let service: CpfConsultService;
   let httpController: HttpTestingController;
 
