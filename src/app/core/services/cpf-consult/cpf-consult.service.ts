@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { User } from '@shared/models/user/user.class';
+import { map, Observable } from 'rxjs';
+
 import { API } from '../API';
 
 @Injectable({
@@ -9,7 +11,9 @@ import { API } from '../API';
 export class CpfConsultService {
   constructor(private http: HttpClient) {}
 
-  getUserByCpf(cpf: string): Observable<any> {
+  getUserByCpf(cpf: string): Observable<User> {
     return this.http.get<User>(`${API.USERS}/${cpf}`).pipe(
+      map((data: User) => data)
+    )
   }
 }
