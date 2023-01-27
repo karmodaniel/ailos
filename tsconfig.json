@@ -2,6 +2,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@env*": ["src/environments*"],
+      "@core*": ["src/app/core*"],
+      "@shared*": ["src/app/shared*"],
+      "@utils*": ["src/app/shared/utils*"],
+      "@pages*": ["src/app/pages*"],
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
@@ -16,6 +23,7 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "strictPropertyInitialization": false,
     "target": "ES2022",
     "module": "es2020",
     "lib": [
