@@ -1,15 +1,15 @@
 <section class="menu">
   <div *ngIf="isExpanded" id="nav-img">
-    <img src="./assets/images/logo.png" alt="" srcset="" />
+    <img src="./assets/images/logo.png" alt="Ailo brand"/>
   </div>
 
   <div *ngIf="!isExpanded" id="nav-img-small">
-    <img src="./assets/images/small-logo.svg" alt="" srcset="" />
+    <img src="./assets/images/small-logo.svg" alt="Ailo brand"/>
   </div>
 
   <div class="links">
     <ul role="list">
-      <li (click)="isExpanded = !isExpanded" role="listitem" id="menu-icon">
+      <li (click)="handleMenuClick()" role="listitem" id="menu-icon">
         <mat-icon class="icon"
           >menu</mat-icon
         >

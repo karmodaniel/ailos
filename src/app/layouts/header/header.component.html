@@ -1,11 +1,14 @@
 <mat-toolbar>
   <div class="toolbar-wrapper">
     <div class="toolbar-content-left">
-      <h1>NOVA ADMISSAO COOPERADO</h1>
-      <span>Cadastro/ Admissao do Cooperado/ Nova Admisao de Cooperado</span>
+      <mat-icon class="menu-mobile" (click)="triggerMenu()">menu</mat-icon>
+      <div class="titles-wrapper">
+        <h1 class="toolbar-title">NOVA ADMISSAO COOPERADO</h1>
+        <span class="toolbar-breadcrumbs">Cadastro/ Admissao do Cooperado/ Nova Admisao de Cooperado</span>
+      </div>
     </div>
     <div class="toolbar-content-right">
-      <mat-icon matBadge="7" matBadgeColor="warn">notifications</mat-icon>
+      <mat-icon class="alerts" matBadge="7" matBadgeColor="warn">notifications</mat-icon>
       <button mat-stroked-button>VIACREDI</button>
       <div
         class="avatar"
@@ -14,6 +17,7 @@
         matBadgeIcon="settings"
         matBadgeIconColor="#457d97"
       ></div>
+      <mat-icon class="settings-mobile">settings</mat-icon>
     </div>
   </div>
 </mat-toolbar>

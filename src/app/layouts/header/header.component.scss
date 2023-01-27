@@ -13,13 +13,18 @@
     padding: 2rem;
 
     .toolbar-content-left {
-      h1 {
+      .menu-mobile {
+        color: #457d97;
+        cursor: pointer;
+      }
+
+      .toolbar-title {
         font-size: 1.5rem;
         font-weight: 600;
         color: #040f14;
       }
 
-      span {
+      .toolbar-breadcrumbs {
         font-size: 0.75rem;
         font-weight: 400;
         color: #889499;
@@ -33,7 +38,7 @@
       justify-content: flex-end;
       align-items: center;
 
-      .mat-icon {
+      .alerts {
         color: #457d97;
       }
 
@@ -55,5 +60,49 @@
         font-weight: 600;
       }
     }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .mat-toolbar .toolbar-wrapper .toolbar-content-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .mat-toolbar .toolbar-wrapper {
+    padding: 1rem;
+
+    .toolbar-content-left {
+      .toolbar-title {
+        font-size: 1rem;
+      }
+
+      .toolbar-breadcrumbs {
+        display: none;
+      }
+    }
+
+    .toolbar-content-right {
+      .alerts,
+      .avatar,
+      .mat-stroked-button {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 731px) {
+  .mat-toolbar .toolbar-wrapper .toolbar-content-right .settings-mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .mat-toolbar .toolbar-wrapper .toolbar-content-left .menu-mobile {
+    display: none;
   }
 }

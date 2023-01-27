@@ -1,9 +1,11 @@
+import { StepperOrientation } from '@angular/cdk/stepper';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { CpfConsultService } from '@core/services/cpf-consult/cpf-consult.service';
 import { ErrorType } from '@shared/models/errors/errorType.class';
 import { User } from '@shared/models/user/user.class';
+import { WindowService } from '@shared/services/window/window.service';
 import { CPF_PATTERN } from '@utils/constants/patterns';
 import { catchError, delay, distinctUntilChanged, finalize, map, of, Subject, Subscription } from 'rxjs';
 
@@ -12,7 +14,8 @@ import { catchError, delay, distinctUntilChanged, finalize, map, of, Subject, Su
   templateUrl: './admission-cooperative.component.html',
   styleUrls: ['./admission-cooperative.component.scss'],
 })
-export class AdmissionCooperativeComponent implements OnDestroy {
+export class AdmissionCooperativeComponent implements OnInit, OnDestroy {
+  public stepperOrientation: StepperOrientation = 'horizontal';
   public searchValue: FormControl = new FormControl('', [
     Validators.required,
     Validators.pattern(CPF_PATTERN),
@@ -23,7 +26,17 @@ export class AdmissionCooperativeComponent implements OnDestroy {
   private subscription$: Subscription = new Subscription();
   public error$: Subject<boolean> = new Subject<boolean>();
 
-  constructor(private cpfConsult: CpfConsultService) {}
+  constructor(private cpfConsult: CpfConsultService, private windowsSizeService: WindowService) {}
+
+  ngOnInit(): void {
+    this.windowsSizeService.currentWindowSize().subscribe((size) => {
+      if (size <= 720) {
+        this.stepperOrientation = 'vertical';
+        return;
+      }
+      this.stepperOrientation = 'horizontal';
+    });    
+  }
 
   onSearch(): void {
     const COOPERATIVE_CPF_FIELD = this.searchValue;

@@ -1,5 +1,5 @@
 <div class="steper-wrapper">
-  <mat-stepper labelPosition="bottom" #stepper>
+  <mat-stepper labelPosition="bottom" #stepper [orientation]="stepperOrientation">
     <ng-template matStepperIcon="number" class="step-icon"> </ng-template>
     <mat-step>
       <ng-template matStepLabel>Início</ng-template>

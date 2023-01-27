@@ -1,5 +1,5 @@
-<mat-sidenav-container autosize>
-  <mat-sidenav disableClose="true" mode="side" opened>
+<mat-sidenav-container autosize [hasBackdrop]="hasBackdrop">
+  <mat-sidenav #menu class="navigation" disableClose="false" [mode]="navigationMode" [opened]="navigationAwaysOpened">
     <app-navigation></app-navigation>
   </mat-sidenav>
   <mat-sidenav

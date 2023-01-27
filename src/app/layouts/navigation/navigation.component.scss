@@ -1,6 +1,6 @@
 .menu {
   height: 100%;
-  background-color: #165C7D;
+  background-color: #165c7d;
 
   #nav-img {
     height: 100px;
@@ -47,5 +47,11 @@
       background-color: #165c7d;
       cursor: pointer;
     }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #menu-icon {
+    display: none;
   }
 }

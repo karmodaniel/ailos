@@ -85,3 +85,9 @@
   flex-shrink: 0;
   margin-top: 2rem;
 }
+
+@media screen and (max-width: 730px) {
+  .content-wrapper {
+    padding: 1rem;
+  }
+}
