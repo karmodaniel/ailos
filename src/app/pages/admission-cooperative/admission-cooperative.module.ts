@@ -7,11 +7,13 @@ import { SharedModule } from '@shared/shared.module';
 
 import { AdmissionCooperativeRoutingModule } from './admission-cooperative-routing.module';
 import { AdmissionCooperativeComponent } from './admission-cooperative.component';
+import { CooperativeCardComponent } from './components/cooperative-card/cooperative-card.component';
 
 
 @NgModule({
   declarations: [
-    AdmissionCooperativeComponent
+    AdmissionCooperativeComponent,
+    CooperativeCardComponent
   ],
   imports: [
     CommonModule,
