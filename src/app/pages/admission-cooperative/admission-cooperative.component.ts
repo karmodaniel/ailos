@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { CpfConsultService } from '@core/services/cpf-consult/cpf-consult.service';
+import { ErrorType } from '@shared/models/errors/errorType.class';
 import { User } from '@shared/models/user/user.class';
 import { CPF_PATTERN } from '@utils/constants/patterns';
 import { catchError, delay, distinctUntilChanged, finalize, map, of, Subject, Subscription } from 'rxjs';
@@ -12,11 +13,15 @@ import { catchError, delay, distinctUntilChanged, finalize, map, of, Subject, Su
   styleUrls: ['./admission-cooperative.component.scss'],
 })
 export class AdmissionCooperativeComponent implements OnDestroy {
-  public searchValue: FormControl = new FormControl('', [Validators.required, Validators.pattern(CPF_PATTERN)]);
+  public searchValue: FormControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern(CPF_PATTERN),
+  ]);
   public oldValue: string = '';
-  public cooperative: User;
+  public cooperative: User | null;
   public loading$: Subject<boolean> = new Subject<boolean>();
   private subscription$: Subscription = new Subscription();
+  public error$: Subject<boolean> = new Subject<boolean>();
 
   constructor(private cpfConsult: CpfConsultService) {}
 
@@ -50,6 +55,8 @@ export class AdmissionCooperativeComponent implements OnDestroy {
         distinctUntilChanged(),
         catchError((err: HttpErrorResponse) => {
           console.log(err);
+          this.cooperative = null;
+          this.handleError(err.status);
           return of();
         }),
         finalize(() => this.loading$.next(false))
@@ -65,6 +72,13 @@ export class AdmissionCooperativeComponent implements OnDestroy {
           data.inscricao
         );
       });
+  }
+
+  handleError(ErrorCode: number): void {
+    const error: ErrorType = new ErrorType();
+
+    const ERROR_TYPE = error.errors[ErrorCode.toString()];
+    if (ERROR_TYPE) this.error$.next(true);
   }
 
   ngOnDestroy(): void {

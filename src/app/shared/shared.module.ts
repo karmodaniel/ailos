@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 import { MatBadgeIconDirective } from './directives/mat-badge-icon.directive';
+import { ErrorComponent } from './components/error/error.component';
 
 const modules = [
   MatSidenavModule,
@@ -24,9 +25,9 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [MatBadgeIconDirective],
+  declarations: [MatBadgeIconDirective, ErrorComponent],
   imports: [CommonModule, ...modules],
-  exports: [...modules, MatBadgeIconDirective],
+  exports: [...modules, MatBadgeIconDirective, ErrorComponent],
   providers: [provideNgxMask()]
 })
 export class SharedModule {}
