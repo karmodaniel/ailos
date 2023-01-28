@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Try it yourself
   - First, you need to have [Node.js](https://nodejs.org.com), and [Angular](https://angular.io/quick-start) installed.
   - Run `npm i` to install the project dependencies.
-  - Run `json-server --watch db.json`. This will set up a fake API to run the project.
+  - Run `json-server --watch db.json` or `npx json-server --watch db.json`. This will set up a fake API to run the project.
   - You can access the api in `http://localhost:3000/`,
   - Run `ng serve` and navigate to `http://localhost:4200/` to see the project running.
 
