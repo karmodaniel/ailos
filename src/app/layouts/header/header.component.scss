@@ -22,6 +22,7 @@
         font-size: 1.5rem;
         font-weight: 600;
         color: #040f14;
+        margin: 0;
       }
 
       .toolbar-breadcrumbs {
@@ -52,7 +53,7 @@
         background-size: cover;
       }
 
-      .mat-stroked-button {
+      .company-name {
         border-radius: 1.2rem;
         border: 1px solid #457d97;
         padding: 0 1.5rem;
@@ -88,7 +89,7 @@
     .toolbar-content-right {
       .alerts,
       .avatar,
-      .mat-stroked-button {
+      .company-name {
         display: none;
       }
     }
