@@ -1,0 +1,45 @@
+<h2 class="section-title">Informe o CPF do futuro cooperado (a)</h2>
+<div class="hint-text-wrapper">
+  <p class="hint-text">
+    Se necessário, voce poderá duplicar uma conta existente ou pausar e retomar
+    este cadastro futuramente.
+  </p>
+  <p class="hint-text">Digite apenas os números (sem pontos ou traços).</p>
+</div>
+
+<div class="input-wrapper">
+  <label for="cpf"
+    >CPF
+    <input
+      [formControl]="searchValue"
+      mask="000.000.000-00"
+      class="input-search"
+      type="text"
+      name="cpf"
+      placeholder="000.000.000-00"
+      required
+    />
+  </label>
+  <button
+    class="submit-button"
+    (click)="onSearch()"
+    mat-button
+    mat-flat-button
+    [disabled]="!searchValue.valid || searchValue.value === oldValue"
+  >
+    <span *ngIf="loading$ | async as loading; else content">
+      <div class="loading">
+        <img src="/assets/images/spinner.gif" alt="loading content" />
+      </div>
+    </span>
+    <ng-template #content> Consultar por CPF </ng-template>
+  </button>
+</div>
+<section class="search-content">
+  <ng-container *ngIf="cooperative">
+    <app-cooperative-card [cooperative]="cooperative"></app-cooperative-card>
+  </ng-container>
+  <ng-container *ngIf="(error$ | async) && !cooperative">
+    <app-error></app-error>
+  </ng-container>
+</section>

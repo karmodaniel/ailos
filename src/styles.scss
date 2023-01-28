@@ -13,6 +13,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-color: transparent;
 }
 
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header-container {
+  align-items: flex-start;
+  width: 50%;
+  align-self: center;
+}
+
 .mat-step-header {
   .mat-step-icon:not(.mat-step-header .mat-step-icon-selected) {
     background-color: #C6CED1;
