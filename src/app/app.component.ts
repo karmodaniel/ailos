@@ -9,7 +9,6 @@ import { WindowService } from '@shared/services/window/window.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  title = 'ailos';
   public navigationMode: MatDrawerMode = 'side';
   public navigationAwaysOpened: boolean = true;
   public hasBackdrop: boolean = true;
@@ -44,7 +43,5 @@ ngAfterViewInit(): void {
     this.hasBackdrop = false;
     this.navigationMode = 'side';
     this.navigationAwaysOpened = true;
-    
-    console.log(window.innerWidth);
   }
 }

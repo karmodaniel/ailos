@@ -1,20 +1,21 @@
-<div  class="cooperative-card">
+<div class="cooperative-card">
   <h3 class="card-title">Situacao cadastral do CPF</h3>
   <h4 class="card-subtitle">Consulta na Receita Federal</h4>
-
-  <div class="cooperative-info-wrapper cooperative-name">
-    <mat-icon class="icon-person">person</mat-icon>
-    <div class="cooperative-info">
-      <span class="info-label">Nome</span>
-      <span>{{ cooperative.nome }}</span>
+  <ng-container *ngÏf="cooperative">
+    <div class="cooperative-info-wrapper cooperative-name">
+      <mat-icon class="icon-person">person</mat-icon>
+      <div class="cooperative-info">
+        <span class="info-label">Nome</span>
+        <span>{{ cooperative.nome }}</span>
+      </div>
     </div>
-  </div>
 
-  <div class="cooperative-info-wrapper cooperative-situation">
-    <mat-icon class="icon-check">check_circle</mat-icon>
-    <div class="cooperative-info">
-      <span class="info-label">Situacao do CPF</span>
-      <span>{{ cooperative.situacao }}</span>
+    <div class="cooperative-info-wrapper cooperative-situation">
+      <mat-icon class="icon-check">check_circle</mat-icon>
+      <div class="cooperative-info">
+        <span class="info-label">Situacao do CPF</span>
+        <span>{{ cooperative.situacao }}</span>
+      </div>
     </div>
-  </div>
+  </ng-container>
 </div>
