@@ -67,7 +67,6 @@ export class AdmissionCooperativeComponent implements OnInit, OnDestroy {
         delay(500),
         distinctUntilChanged(),
         catchError((err: HttpErrorResponse) => {
-          console.log(err);
           this.cooperative = null;
           this.handleError(err.status);
           return of();
@@ -75,7 +74,6 @@ export class AdmissionCooperativeComponent implements OnInit, OnDestroy {
         finalize(() => this.loading$.next(false))
       )
       .subscribe((data: User) => {
-        console.log(data);
         this.cooperative = new User(
           data.id,
           data.cpf,
